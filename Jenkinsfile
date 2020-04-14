@@ -1,8 +1,12 @@
-node {
+pipeline {
 
-  stage 'Docker build'
-  docker.build('php-app')
- 
+    stages {
+        stage('dockerbuild') {
+            steps {
+                docker.build('php-app')
+            }
+        }
+    }
   stage 'Docker push' {
       steps {
           script {
