@@ -1,7 +1,5 @@
 node {
-  stage 'Checkout'
-  git url: 'https://github.com/balaguntupalli/php-app-ecr.git'
- 
+
   stage 'Docker build'
   docker.build('php-app')
  
